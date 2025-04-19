@@ -61,29 +61,15 @@ export default function App() {
   };
 
   const readCounter = () => {
-    console.log("📞 Calling ReadCounter...");
     fetch(`${BASE_URL}/ReadCounter`, {
       method: 'GET',
     })
       .then((response) => {
-        console.log("✅ ReadCounter response received");
+        console.log("Response received from /ReadCounter");
         return response.text();
       })
-      .then((text) => {
-        console.log("📦 Raw response text:", text);
-        const parsed = parseInt(text);
-        if (!isNaN(parsed)) {
-          setCounter(parsed);
-          console.log("✅ Set counter to:", parsed);
-        } else {
-          console.warn("⚠️ Invalid response from backend:", text);
-        }
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error("❌ Error reading counter:", error);
-        setIsLoading(false);
-      });
+      .then((text) => setCounter(parseInt(text)))
+      .catch((error) => console.error(error));
   };
 
   return (
