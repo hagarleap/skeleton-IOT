@@ -7,11 +7,10 @@ const BASE_URL = "https://skeleton-app.azurewebsites.net/api";
 export default function App() {
   const [counter, setCounter] = useState(null);
   const [connection, setConnection] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-
+  
   useEffect(() => {
     const signalrConnection = new SignalR.HubConnectionBuilder()
-      .withUrl(`${BASE_URL}/negotiate`, {
+      .withUrl(BASE_URL, {
         withCredentials: false,
       })
       .withAutomaticReconnect()
