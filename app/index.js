@@ -39,7 +39,6 @@ export default function App() {
 
     setConnection(signalrConnection);
     startConnection();
-    readCounter(); // read on load
   }, []);
 
   const increaseCounter = () => {
