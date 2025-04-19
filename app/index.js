@@ -30,6 +30,7 @@ export default function App() {
         await signalrConnection.start();
         console.log('SignalR connected.');
         setConnection(signalrConnection);
+        readCounter();
       } catch (err) {
         console.log('SignalR connection error:', err);
         setTimeout(startConnection, 5000);
