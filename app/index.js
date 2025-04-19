@@ -88,12 +88,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      {isLoading ? (
-        <Text style={styles.counterText}>Loading...</Text>
-      ) : (
-        <Text style={styles.counterText}>Counter: {counter}</Text>
-      )}
-
+      <Text style={styles.counterText}>Counter: {counter}</Text>
       <View style={styles.buttonContainer}>
         <Button title="Increase" onPress={increaseCounter} />
         <Button title="Decrease" onPress={decreaseCounter} />
