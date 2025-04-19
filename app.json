@@ -37,6 +37,11 @@
     "experiments": {
       "typedRoutes": true,
       "baseUrl": "/expo-gh-pages"
+    },
+    "extra": {
+      "expo-router": {
+        "basePath": "/skeleton-IOT"
+      }
     }
   }
 }
