@@ -63,7 +63,10 @@ export default function App() {
     fetch(`${BASE_URL}/ReadCounter`, {
       method: 'GET',
     })
-      .then((response) => response.text())
+      .then((response) => {
+        console.log("Response received from /ReadCounter");
+        return response.text();
+      })
       .then((text) => setCounter(parseInt(text)))
       .catch((error) => console.error(error));
   };
